@@ -1,6 +1,6 @@
 # Relógio Binário no Terminal (Python)
 
-Este projeto exibe um **relógio binário** diretamente no terminal, atualizado em tempo real.
+<img src="relogio.png"/>
 
 ----------
 
