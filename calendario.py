@@ -7,7 +7,7 @@ def limpar_tela():
 def bin_digit(digito, bits=4):
     return [int(b) for b in format(digito, f'0{bits}b')]
 
-def desenhar_binario_numero(valor, bits_por_digito=4):
+def binario_numero(valor, bits_por_digito=4):
     digitos = [int(d) for d in str(valor)]
     colunas = [bin_digit(d, bits_por_digito) for d in digitos]
     linhas = []
@@ -18,19 +18,18 @@ def desenhar_binario_numero(valor, bits_por_digito=4):
         linhas.append(linha)
     return linhas
 
-def desenhar_calendario_binario():
+def desenhar_calendario():
     data = date.today()
     dia, mes, ano = f"{data.day:02d}", f"{data.month:02d}", f"{data.year:04d}"
 
-    linhas_dia = desenhar_binario_numero(dia)
-    linhas_mes = desenhar_binario_numero(mes)
-    linhas_ano = desenhar_binario_numero(ano)
+    linhas_dia = binario_numero(dia)
+    linhas_mes = binario_numero(mes)
+    linhas_ano = binario_numero(ano)
 
     print("Dia  Mês  Ano:\n")
     for i in range(len(linhas_ano)):
         linha = linhas_dia[i] + "  " + linhas_mes[i] + "  " + linhas_ano[i]
         print(linha)
 
-if __name__ == "__main__":
-    limpar_tela()
-    desenhar_calendario_binario()
+limpar_tela()
+desenhar_calendario()

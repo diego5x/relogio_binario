@@ -1,5 +1,4 @@
 import time
-from datetime import date
 import os
 
 def limpar_tela():
@@ -35,5 +34,5 @@ def desenhar_relogio():
     except KeyboardInterrupt:
         pass
 
-#desenhar_relogio()
-desenhar_calendario()
+if __name__ == "__main__":
+    desenhar_relogio()
