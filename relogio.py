@@ -1,4 +1,5 @@
 import time
+from datetime import date
 import os
 
 def limpar_tela():
@@ -21,15 +22,18 @@ def desenhar_relogio():
             col3 = bin_digit(d3) 
             col4 = bin_digit(d4)  
 
-            print("Relógio Binário:")
             print(f"Hora: {h:02d}:{m:02d}")
             for i in range(4):
                 linha = ""
                 for col in [col1, col2, col3, col4]:
-                    linha += "● " if col[i] else "○ "
+                    if col[i]:
+                        linha += "\033[35m●\033[0m "
+                    else:
+                        linha += "○ "
                 print(linha)
             time.sleep(1)
     except KeyboardInterrupt:
         pass
 
-desenhar_relogio()
+#desenhar_relogio()
+desenhar_calendario()
